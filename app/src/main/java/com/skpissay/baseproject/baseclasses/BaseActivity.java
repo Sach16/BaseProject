@@ -26,7 +26,7 @@ import java.util.HashMap;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-public abstract class BaseActivity extends AppCompatActivity implements NetworkChangeReceiver.NetworkStateChangeListener {
+public abstract class BaseActivity extends AppCompatActivity implements NetworkChangeReceiver.NetworkStateChangeListener, View.OnClickListener{
     protected Context mContext;
 
     public BaseFragment m_cObjFragmentBase;
@@ -97,6 +97,9 @@ public abstract class BaseActivity extends AppCompatActivity implements NetworkC
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
+    
+    @Override
+    public void onClick(View view) {}
 
     public final class UIHandler extends Handler {
         @Override
