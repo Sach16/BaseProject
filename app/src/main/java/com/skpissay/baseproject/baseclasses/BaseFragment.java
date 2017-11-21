@@ -29,7 +29,7 @@ import butterknife.BindView;
  * Created by skpissay on 19/07/17.
  */
 
-public abstract class BaseFragment extends Fragment implements IEmptyStateListener{
+public abstract class BaseFragment extends Fragment implements IEmptyStateListener, View.OnClickListener{
 
     protected BaseActivity m_cObjMainActivity;
     protected UIHandler m_cObjUIHandler;
@@ -107,6 +107,9 @@ public abstract class BaseFragment extends Fragment implements IEmptyStateListen
             mErrorAdapter.notifyItemChanged(0);
         }
     }
+    
+    @Override
+    public void onClick(View view) {}
 
     public final class UIHandler extends Handler {
         public void handleMessage(Message pObjMessage) {
